@@ -6,35 +6,34 @@ st.set_page_config(layout="wide")
 col1, col2= st.columns(2)
 
 with col1:
+    st.title("VLOOK（贩卖小尾巴）")
+    content = """ hand-made crafts """
+    st.header(content)
+with col2:
     st.image("images/photo.png", width=500)
 
-with col2:
-    st.title("Tianyue Lyu")
-    content = """ Hi，I am Tianyue! 
-     I am a first year cs student at university of waterloo. """
-    st.info(content)
-
 content2 = """
-Below you can find some of the apps I have built in Python. Feel free to contact me!
+Take a look of our products below! 
 """
 st.write(content2)
 
-col3, col4 = st.columns(2)
 
-col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
+st.header("""Signature Series""")
+st.image("images/img_1.png", width=800)
 
-df = pandas.read_csv("data.csv", sep=";")
+st.header("""Next-Gen Selection""")
+st.image("images/img_2.png",width=800)
+
+st.header("""Participated Exhibition""")
+col3, col4= st.columns(2)
+
 with col3:
-    for index, row in df[:10].iterrows():
-        st.header(row["title"])
-        st.write(row["description"])
-        st.image("images/" + row["image"])
-        st.write(f"[Source Code]({row['url']})")
+    st.image("images/img_3.png", width=500)
 
 with col4:
-     for index, row in df[10:].iterrows():
-        st.header(row["title"])
-        st.write(row["description"])
-        st.image("images/" + row["image"])
-        st.write(f"[Source Code]({row['url']})")
+    st.image("images/img_4.png", width=300)
+
+
+
+
 
